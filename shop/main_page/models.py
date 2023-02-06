@@ -4,7 +4,7 @@ class Order(models.Model):
     name = models.CharField(verbose_name='Имя', max_length=30, help_text='Имя')
     bike = models.CharField(verbose_name='Мотик', max_length=30, help_text='Мотоцикл')
     phone = models.CharField(verbose_name='Телефон', max_length=30, help_text='Телефон')
-    comment = models.TextField(verbose_name='Комментарий', help_text='Расскажите что Вы ожидаете от прошивки', blank=True, null=True)
+    comment = models.TextField(verbose_name='Комментарий', help_text='Расскажите, что Вы ожидаете от прошивки', blank=True, null=True)
     order_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата заявки')
 
     def __str__(self):
@@ -14,5 +14,5 @@ class Order(models.Model):
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'  
         constraints = [
-            models.UniqueConstraint(fields=['name', 'bike', 'phone'], name='unique_order'),    
+            models.UniqueConstraint(fields=['name', 'bike', 'phone'], name='unique_order', violation_error_message='Вы уже оставили заказ!'),    
         ]

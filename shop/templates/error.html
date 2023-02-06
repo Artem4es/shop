@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load user_filters %}
+{% block content %}
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="https://www.youtube.com/channel/UC-BNjhjfBh5A-bwX8bjG7rA"><img src="{% static 'assets/img/youtube.png' %}" alt="..." style="width:75px; height:60px"/></a>
+                <a class="navbar-brand" href="https://t.me/turbotjoma"><img src="{% static 'assets/img/telegram.png' %}" alt="..." style="width:60px; height:60px"/></a>
+                <a class="navbar-brand" href="https://www.instagram.com/turbotyoma/"><img src="{% static 'assets/img/instagram.png' %}" alt="..." style="width:60px; height:60px"/></a>
+                <a class="navbar-brand" href="https://vk.com/turbotyoma"><img src="{% static 'assets/img/vk.png' %}" alt="..." style="width:60px; height:60px"/></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Раздушка</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Отзывы</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Как происходит прошивка</a></li>
+                        {% comment %} <li class="nav-item"><a class="nav-link" href="#team">Обо мне</a></li> {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="#contact">Оставить заявку</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            {% if f != 'success' %}
+            <h2 class="section-heading text-uppercase">Оставить заявку</h2>
+            <h3 class="section-subheading text-muted-custom">Или написать в любую соц сеть или мессенджер.</h3>
+        </div>
+
+        
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6">
+
+                    {% if form.errors %}
+                        {% for field in form %} 
+                            {% for error in field.errors %}            
+                                <div class="alert alert-danger">
+                                    {{ error|escape }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {{ error|escape }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+            
+
+
+                    <form method="post" enctype="multipart/form-data" form id="contactForm" 
+                        {% if action_url %}
+                            action="{% url action_url %}"
+                        {% endif %}
+                    >
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.label != 'Комментарий' %}
+                            <div class="form-group">
+                                {{ field|addclass:'form-control' }}
+                            </div>
+                        {% endif %}    
+                        {% if field.label == 'Комментарий' %}
+                </div> 
+                       <div class="col-md-6"> 
+                                <div class="form-group">
+                                    {{ field|addclass:'form-control' }}
+                                </div> 
+                            </div>
+    
+                        {% endif %}
+            
+                           
+                    {% endfor %}
+                  
+    
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    {% if form.errors %}
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <!-- Submit Button-->
+                    {% endif %}
+
+                        <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" type="submit">Оставить заявку</button></div> 
+
+                                         
+                     </button>
+                    </div>
+                    </form>
+                    {% endif %}   
+                    {% if f == 'success' %}
+                    <h2 class="section-heading text-uppercase">Заявка успешно отправлена!</h2>
+
+                
+                    {% comment %} <div class="d-none" id="submitSuccessMessage"> {% endcomment %}
+                        <div class="text-center text-white mb-3">
+                         
+                            Мы свяжемся с Вами в ближайшее время!
+                        </div>
+                    {% comment %} </div> {% endcomment %}
+                    {% endif %}
+                  </div> 
+                </div>  
+
+    </div>
+</section>
+
+</body>
+
+
+{% endblock %}
