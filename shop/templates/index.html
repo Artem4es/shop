@@ -18,7 +18,7 @@
                 {% comment %} <a href"#page-top"><img src="{% static 'assets/img/turbo.png' %}" alt="..."/></a> {% endcomment %}
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Раздушка</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Раздушка</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Отзывы</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Как происходит прошивка</a></li>
                         {% comment %} <li class="nav-item"><a class="nav-link" href="#team">Обо мне</a></li> {% endcomment %}
@@ -56,6 +56,10 @@
                     <h3 class="section-subheading text-muted">Нет, PowerCommander - всего лишь инструмент для настройки подачи топлива. Он не даёт и половины возможностей, которые дает прошивка стандартного мозга!</h3>
                     <h2 class="section-heading text-uppercase">Что еще можно сделать?</h2>
                     <h3 class="section-subheading text-muted">Например, можно улучшить плавность хода или сделать раньше температуру срабатывания вентилятора - это очень приятный бонус когда на улице жара и двигатель просто раскаляется (и Вы вместе с ним😜)</h3>
+                    <h3 class="section-subheading text-muted">А ещё иногда можно реализовать квик шифтер/лаунч контроль на стандартных мозгах!</h3>
+
+                </h3>
+
 
 
 
@@ -125,7 +129,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="..." />
+                                <img class="img-fluid" src="{% static 'assets/img/portfolio/441.jpg' %}" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Yamaha R1 2009</div>
