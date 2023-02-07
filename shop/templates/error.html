@@ -19,9 +19,9 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Раздушка</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Отзывы</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">Как происходит прошивка</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Как происходит прошивка</a></li>
                         {% comment %} <li class="nav-item"><a class="nav-link" href="#team">Обо мне</a></li> {% endcomment %}
-                        <li class="nav-item"><a class="nav-link" href="#contact">Оставить заявку</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Оставить заявку</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,7 +30,6 @@
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center">
-            {% if f != 'success' %}
             <h2 class="section-heading text-uppercase">Оставить заявку</h2>
             <h3 class="section-subheading text-muted-custom">Или написать в любую соц сеть или мессенджер.</h3>
         </div>
@@ -100,18 +99,6 @@
                      </button>
                     </div>
                     </form>
-                    {% endif %}   
-                    {% if f == 'success' %}
-                    <h2 class="section-heading text-uppercase">Заявка успешно отправлена!</h2>
-
-                
-                    {% comment %} <div class="d-none" id="submitSuccessMessage"> {% endcomment %}
-                        <div class="text-center text-white mb-3">
-                         
-                            Мы свяжемся с Вами в ближайшее время!
-                        </div>
-                    {% comment %} </div> {% endcomment %}
-                    {% endif %}
                   </div> 
                 </div>  
 
