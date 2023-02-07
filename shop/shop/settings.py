@@ -26,9 +26,14 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # ломается статика!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'www.turbotyoma.ru',
+    'turbotyoma.ru',
+]
 
 
 # Application definition
@@ -127,7 +132,7 @@ USE_TZ = True
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATIC_URL = '/static/'
-# MEDIA_URL = '/assets/'
+
 
 
 # Default primary key field type
