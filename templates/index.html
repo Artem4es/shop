@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load user_filters %}
+{% block content %}
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="https://www.youtube.com/channel/UC-BNjhjfBh5A-bwX8bjG7rA"><img src="{% static 'assets/img/youtube.png' %}" alt="..." style="width:75px; height:60px"/></a>
+                <a class="navbar-brand" href="https://t.me/turbotjoma"><img src="{% static 'assets/img/telegram.png' %}" alt="..." style="width:60px; height:60px"/></a>
+                <a class="navbar-brand" href="https://www.instagram.com/turbotyoma/"><img src="{% static 'assets/img/1.png' %}" alt="..." style="width:60px; height:60px"/></a>
+                <a class="navbar-brand" href="https://vk.com/turbotyoma"><img src="{% static 'assets/img/vk.png' %}" alt="..." style="width:60px; height:60px"/></a>
+                {% comment %} <a href"#page-top"><img src="{% static 'assets/img/turbo.png' %}" alt="..."/></a> {% endcomment %}
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">Раздушка</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Отзывы</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Как происходит прошивка</a></li>
+                        {% comment %} <li class="nav-item"><a class="nav-link" href="#team">Обо мне</a></li> {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="#contact">Оставить заявку</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                {% comment %} <div class="masthead-subheading">Добро пожаловать!</div> {% endcomment %}
+                <div class="masthead-heading-custom">А ты знал, что внутрияпонские мотоциклы не едут быстрее ~194 км/ч?</div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Подробнее</a>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section bg-custom" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading-custom text-uppercase">Что такое раздушка?</h2>
+                    <h3 class="section-subheading text-muted">Всё просто, раздушка - это перепрограммирование блока управления (мозгов) мотоцкла, чтобы добиться макимальной отдачи без уещрба ресурсу!</h3>
+                    <h2 class="section-heading-custom text-uppercase">Кому она нужна?</h2>
+                    <h3 class="section-subheading text-muted">В первую очередь мотоциклам, сделанным для внутреннего рынка Японии</h3>
+                    <h2 class="section-heading-custom text-uppercase">Какие ещё бывают ограничители?</h2>
+                    <h3 class="section-subheading text-muted">Некоторые модели, сделанные для европейского и американского рынка также имеют оганичители. В частности, Yamaha MT-09 для рынка Европы имеет ограничение в районе 212 км/ч. Это также можно исправить!"</h3>
+                    <h3 class="section-subheading text-muted">Кроме прочего, на многих современных мотоциклах с ETV (дроссельная заслонка не имеет прямой связи через трос с ручкой газа) часто ограничивают открытие заслонок на 100%. Это можно исправить только прошивкой блока управления!</h3>
+                    <h2 class="section-heading-custom text-uppercase">Можно же купить паверкомандер или подобный блок и всё это сделать?</h2>    
+                    <h3 class="section-subheading text-muted">Нет, PowerCommander - всего лишь инструмент для настройки подачи топлива. Он не даёт и половины возможностей, которые дает прошивка стандартного мозга!</h3>
+                    <h2 class="section-heading-custom text-uppercase">Что еще можно сделать?</h2>
+                    <h3 class="section-subheading text-muted">Например, можно улучшить плавность хода или сделать раньше температуру срабатывания вентилятора - это очень приятный бонус когда на улице жара и двигатель просто раскаляется (и Вы вместе с ним😜)</h3>
+                    <h3 class="section-subheading text-muted">А ещё иногда можно реализовать квик шифтер/лаунч контроль на стандартных мозгах!</h3>
+
+                </h3>
+
+
+
+
+
+                </div>
+
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+
+        <section class="page-section bg-custom" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Отзывы</h2>
+                    {% comment %} <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> {% endcomment %}
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://www.instagram.com/p/CBpT6klH2eXIilNtwW-J3s8j4hzgK5vZ1_vVWo0/">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'assets/img/portfolio/1.jpg' %}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Yamaha FZ1</div>
+                                {% comment %} <div class="portfolio-caption-subheading text-muted">Illustration</div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://www.instagram.com/p/CDT2IoUHjoRv1qtCrsLRjBWGJMc3cp_fcCHQ4U0/">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'assets/img/portfolio/2.jpg' %} " alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Honda CBR600RR</div>
+                                {% comment %} <div class="portfolio-caption-subheading text-muted">Graphic Design</div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://vk.com/motomechanics?w=wall-123314669_1324%2Fall">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'assets/img/portfolio/3.jpg' %}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Yamaha MT09 2014</div>
+                                {% comment %} <div class="portfolio-caption-subheading text-muted">Identity</div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 4-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://www.instagram.com/p/CEBkkR9HXxu/">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'assets/img/portfolio/441.jpg' %}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Yamaha R1 2009</div>
+                                {% comment %} <div class="portfolio-caption-subheading text-muted"></div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 5-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://www.instagram.com/turbotyoma/">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'assets/img/portfolio/5.jpg' %}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Yamaha R1 2019</div>
+                                {% comment %} <div class="portfolio-caption-subheading text-muted">Website Design</div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 6-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'assets/img/portfolio/6.jpg' %}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Yamaha MT09 2020</div>
+                                {% comment %} <div class="portfolio-caption-subheading text-muted">Photography</div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section bg-custom" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Как происходит прошивка</h2>
+                    <br><br>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/order.png' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Оставь заявку!</h4>
+                                {% comment %} <h4 class="subheading">Можно оставить заявку на сайте или написать в любую соц сеть или мессенджер</h4> {% endcomment %}
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Можно оставить заявку на сайте или написать в любую соц сеть или мессенджер</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/detail.png' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Обсуждение деталей</h4>
+                                {% comment %} <h4 class="subheading">An Agency is Born</h4> {% endcomment %}
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Чаще всего прошивка подразумевает определённый набор улучшайзеров, но иногда возможны дополнительные ништяки вроде возможности сделать квик-шифтер или лаунч-контроль на стандартных мозгах!</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/delivery.png' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Отправка мозга через СДЭК или лично</h4>
+                                {% comment %} <h4 class="subheading">Transition to Full Service</h4> {% endcomment %}
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Да-да, мотоцикл не нужен и это очень удобно, когда Вы находитесь в другом городе или на другом конце страны!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/flash.png' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Прошивка</h4>
+                                {% comment %} <h4 class="subheading">Phase Two Expansion</h4> {% endcomment %}
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Занимает 2-3 рабочих дня</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/backdelivery.png' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Оплата и отправка</h4>
+                                {% comment %} <h4 class="subheading">Phase Two Expansion</h4> {% endcomment %}
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Оплата заказа и отправка блока управления</p></div>
+                        </div>
+                    </li> 
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"  style="background-color:#002cc3">
+                            <h4>
+                                Вы
+                                <br />
+                                радуетесь
+                                <br />
+                                результату!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Оставить заявку</h2>
+                    <h3 class="section-subheading text-muted-custom">Или написать в любую соц сеть или мессенджер.</h3>
+                </div>
+
+                
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+
+                            {% if form.errors %}
+                                {% for field in form %} 
+                                    {% for error in field.errors %}            
+                                        <div class="alert alert-danger">
+                                            {{ error|escape }}
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    <div class="alert alert-danger">
+                                        {{ error|escape }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
+                    
+
+
+                            <form method="post" enctype="multipart/form-data" form id="contactForm" 
+                                {% if action_url %}
+                                    action="{% url action_url %}"
+                                {% endif %}
+                            >
+                            {% csrf_token %}
+                            {% for field in form %}
+                                {% if field.label != 'Комментарий' %}
+                                    <div class="form-group">
+                                        {{ field|addclass:'form-control' }}
+                                    </div>
+                                {% endif %}    
+                                {% if field.label == 'Комментарий' %}
+                        </div> 
+                               <div class="col-md-6"> 
+                                        <div class="form-group">
+                                            {{ field|addclass:'form-control' }}
+                                        </div> 
+                                    </div>
+            
+                                {% endif %}
+                    
+                                   
+                            {% endfor %}
+                          
+            
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            {% if form.errors %}
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">Error sending message!</div>
+                            </div>
+                            <!-- Submit Button-->
+                            {% endif %}
+
+                                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" type="submit">Оставить заявку</button></div> 
+
+                                                 
+                             </button>
+                            </div>
+                            </form>  
+                          </div> 
+                        </div>  
+            </div>
+        </section>
+
+
+{% endblock %}

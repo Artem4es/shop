@@ -19,3 +19,4 @@ sqlparse==0.4.3
 tornado==6.1
 tzdata==2022.7
 tzlocal==4.2
+whitenoise==6.3.0
