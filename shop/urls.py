@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import RedirectView
+
 from main_page import views
 
 
@@ -23,6 +25,7 @@ app_name = 'shop'
 urlpatterns = [
     path('', views.index, name='index'),
     path('yandex_551046113a1adf80.html', views.yandex_webmaster),
+    path('favicon.ico',RedirectView.as_view(url='/static/assets/turbo.png')),
     path('admin/', admin.site.urls),
 
 ]

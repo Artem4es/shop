@@ -135,7 +135,7 @@ USE_TZ = True
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_ROOT = 'D:\Dev\shop\static'
-print(STATIC_ROOT)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STATIC_URL = '/static/'
