@@ -27,4 +27,7 @@ def index(request):
     context = {'form': form}
     return render(request, 'index.html', context)
 
+def yandex_webmaster(request):
+    return render(request, 'yandex_551046113a1adf80.html')
+
 

@@ -22,6 +22,7 @@ app_name = 'shop'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('yandex_551046113a1adf80.html', views.yandex_webmaster),
     path('admin/', admin.site.urls),
 
 ]
