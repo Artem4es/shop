@@ -30,4 +30,8 @@ def index(request):
 def yandex_webmaster(request):
     return render(request, 'yandex_551046113a1adf80.html')
 
+def google(request):
+    return render(request, 'google91b4364c93644c83.html')
+
+
 
