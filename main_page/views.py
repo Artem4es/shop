@@ -13,7 +13,7 @@ def index(request):
             name = form.cleaned_data.get('name')
             bike = form.cleaned_data.get('bike')
             phone = form.cleaned_data.get('phone')
-            comment =form.cleaned_data.get('comment')
+            comment = form.cleaned_data.get('comment')
 
             bot.send_message(chat_id=admin_id, text=f'Ура, новая заявка от {name}!')
             bot.send_message(chat_id=admin_id, text=f'Хочет прошить мотоцикл: {bike}')
