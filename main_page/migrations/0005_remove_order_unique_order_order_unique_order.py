@@ -4,18 +4,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main_page', '0004_auto_20230206_0011'),
+        ("main_page", "0004_auto_20230206_0011"),
     ]
 
     operations = [
         migrations.RemoveConstraint(
-            model_name='order',
-            name='unique_order',
+            model_name="order",
+            name="unique_order",
         ),
         migrations.AddConstraint(
-            model_name='order',
-            constraint=models.UniqueConstraint(fields=('name', 'bike', 'phone'), name='unique_order', violation_error_message='Вы уже оставили заказ!'),
+            model_name="order",
+            constraint=models.UniqueConstraint(
+                fields=("name", "bike", "phone"),
+                name="unique_order",
+                violation_error_message="Вы уже оставили заказ!",
+            ),
         ),
     ]
