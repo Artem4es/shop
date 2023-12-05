@@ -1,37 +1,37 @@
 from django.shortcuts import render
 
-
 from main_page.forms import OrderForm
-from .telegram import bot, admin_id
+
+from .telegram import admin_id, bot
 
 
 def index(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = OrderForm(request.POST)
+        print(form.errors)
         if form.is_valid():
             form.save()
-            name = form.cleaned_data.get('name')
-            bike = form.cleaned_data.get('bike')
-            phone = form.cleaned_data.get('phone')
-            comment = form.cleaned_data.get('comment')
+            name = form.cleaned_data.get("name")
+            bike = form.cleaned_data.get("bike")
+            phone = form.cleaned_data.get("phone")
+            comment = form.cleaned_data.get("comment")
 
-            bot.send_message(chat_id=admin_id, text=f'Ура, новая заявка от {name}!')
-            bot.send_message(chat_id=admin_id, text=f'Хочет прошить мотоцикл: {bike}')
+            bot.send_message(chat_id=admin_id, text=f"Ура, новая заявка от {name}!")
+            bot.send_message(chat_id=admin_id, text=f"Хочет прошить мотоцикл: {bike}")
             bot.send_message(chat_id=admin_id, text=phone)
             if comment:
                 bot.send_message(chat_id=admin_id, text=comment)
-            return render(request, 'suc.html')
-        return render(request, 'error.html', {'form': form})
+            return render(request, "suc.html")
+        return render(request, "error.html", {"form": form})
 
     form = OrderForm()
-    context = {'form': form}
-    return render(request, 'index.html', context)
+    context = {"form": form}
+    return render(request, "index.html", context)
+
 
 def yandex_webmaster(request):
-    return render(request, 'yandex_551046113a1adf80.html')
+    return render(request, "yandex_551046113a1adf80.html")
+
 
 def google(request):
-    return render(request, 'google91b4364c93644c83.html')
-
-
-
+    return render(request, "google91b4364c93644c83.html")

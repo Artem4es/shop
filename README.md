@@ -50,8 +50,5 @@ python3 manage.py createsuperuser
 python3 manage.py runserver
 ```
 
-## Планы по улучшению проекта: :rocket:
-
-- Добавить защиту от спам рассылок
 
 
