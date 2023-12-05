@@ -4,38 +4,52 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main_page', '0003_auto_20230203_2239'),
+        ("main_page", "0003_auto_20230203_2239"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='order',
-            options={'ordering': ('-order_date',), 'verbose_name': 'Заявка', 'verbose_name_plural': 'Заявки'},
+            name="order",
+            options={
+                "ordering": ("-order_date",),
+                "verbose_name": "Заявка",
+                "verbose_name_plural": "Заявки",
+            },
         ),
         migrations.AlterField(
-            model_name='order',
-            name='bike',
-            field=models.CharField(help_text='Мотоцикл', max_length=30, verbose_name='Мотик'),
+            model_name="order",
+            name="bike",
+            field=models.CharField(
+                help_text="Мотоцикл", max_length=30, verbose_name="Мотик"
+            ),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='comment',
-            field=models.TextField(blank=True, help_text='Расскажите, что Вы ожидаете от прошивки', null=True, verbose_name='Комментарий'),
+            model_name="order",
+            name="comment",
+            field=models.TextField(
+                blank=True,
+                help_text="Расскажите, что Вы ожидаете от прошивки",
+                null=True,
+                verbose_name="Комментарий",
+            ),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='name',
-            field=models.CharField(help_text='Имя', max_length=30, verbose_name='Имя'),
+            model_name="order",
+            name="name",
+            field=models.CharField(help_text="Имя", max_length=30, verbose_name="Имя"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='phone',
-            field=models.CharField(help_text='Телефон', max_length=30, verbose_name='Телефон'),
+            model_name="order",
+            name="phone",
+            field=models.CharField(
+                help_text="Телефон", max_length=30, verbose_name="Телефон"
+            ),
         ),
         migrations.AddConstraint(
-            model_name='order',
-            constraint=models.UniqueConstraint(fields=('name', 'bike', 'phone'), name='unique_order'),
+            model_name="order",
+            constraint=models.UniqueConstraint(
+                fields=("name", "bike", "phone"), name="unique_order"
+            ),
         ),
     ]

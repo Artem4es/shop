@@ -5,5 +5,4 @@ register = template.Library()
 
 @register.filter
 def addclass(field, css):
-    return field.as_widget(attrs={'input class': css, 'placeholder': field.help_text})
-
+    return field.as_widget(attrs={"input class": css, "placeholder": field.help_text})
