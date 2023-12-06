@@ -31,10 +31,8 @@ SECRET_KEY = get_random_secret_key()
 DEBUG = False  # ломается статика!
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "www.turbotyoma.ru",
     "turbotyoma.ru",
+    "www.turbotyoma.ru",
 ]
 
 
@@ -152,6 +150,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CSRF_TRUSTED_ORIGINS = [
     "https://www.turbotyoma.ru",
+    "https://turbotyoma.ru",
 ]
 
 RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_PUBLIC_KEY")
