@@ -28,9 +28,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # ломается статика!
+DEBUG = False # ломается статика!
 
 ALLOWED_HOSTS = [
+    "app",
+    "localhost",
     "turbotyoma.ru",
     "www.turbotyoma.ru",
 ]
@@ -151,6 +153,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CSRF_TRUSTED_ORIGINS = [
     "https://www.turbotyoma.ru",
     "https://turbotyoma.ru",
+    "http://localhost",
 ]
 
 RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_PUBLIC_KEY")
