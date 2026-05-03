@@ -28,9 +28,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # ломается статика!
+DEBUG = True # ломается статика!
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "app",
     "localhost",
     "turbotyoma.ru",

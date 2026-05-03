@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h1>Отзывы</h1>
+  {% for r in reviews %}
+    <div class="mb-4">
+      <strong>{{ r.author }}</strong>
+      {% if r.bike_model %}<span>— {{ r.bike_model.brand.name }} {{ r.bike_model.name }}</span>{% endif %}
+      <div>{{ r.text|linebreaks }}</div>
+      {% if r.source_url %}<a href="{{ r.source_url }}" rel="nofollow noopener" target="_blank">Источник</a>{% endif %}
+    </div>
+  {% empty %}
+    <p>Отзывов пока нет.</p>
+  {% endfor %}
+</div>
+{% endblock %}
+

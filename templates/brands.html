@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h1>Модели мотоциклов</h1>
+  {% for brand in brands %}
+    <h2 class="mt-4">{{ brand.name }}</h2>
+    <ul>
+      {% for m in brand.models.all %}
+        <li><a href="{{ m.get_absolute_url }}">{{ brand.name }} {{ m.name }}{% if m.years %} ({{ m.years }}){% endif %}</a></li>
+      {% empty %}
+        <li>Пока нет моделей</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/brands/">Модели</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ model.brand.name }} {{ model.name }}</li>
+    </ol>
+  </nav>
+  <h1>{{ model.brand.name }} {{ model.name }}{% if model.years %} ({{ model.years }}){% endif %}</h1>
+  {% if model.image %}
+    <img src="{{ model.image.url }}" alt="{{ model.brand.name }} {{ model.name }}" class="img-fluid my-3"/>
+  {% endif %}
+  {% if model.short_description %}
+    <p class="lead">{{ model.short_description }}</p>
+  {% endif %}
+  <div class="content">{{ model.content|safe }}</div>
+
+  <hr/>
+  <h2>Отзывы</h2>
+  <div>
+    {% for r in reviews %}
+      <div class="mb-3">
+        <strong>{{ r.author }}</strong>
+        <div>{{ r.text|linebreaks }}</div>
+        {% if r.source_url %}<a href="{{ r.source_url }}" rel="nofollow noopener" target="_blank">Источник</a>{% endif %}
+      </div>
+    {% empty %}
+      <p>Отзывов пока нет.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h1>Ликбез</h1>
+  <ul>
+    {% for a in articles %}
+      <li><a href="{{ a.get_absolute_url }}">{{ a.title }}</a>{% if a.summary %} — {{ a.summary }}{% endif %}</li>
+    {% empty %}
+      <li>Пока нет статей.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+

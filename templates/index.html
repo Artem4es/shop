@@ -25,7 +25,7 @@
                 {% comment %}
                 <li class="nav-item"><a class="nav-link" href="#team">Обо мне</a></li>
                 {% endcomment %}
-                <li class="nav-item"><a class="nav-link" href="#contact">Оставить заявку</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Связаться удобным способом</a></li>
             </ul>
         </div>
     </div>
@@ -176,10 +176,10 @@
                 <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/order.png' %}" alt="..." /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4>Оставь заявку!</h4>
+                        <h4>Связаться удобным способом!</h4>
                         {% comment %} <h4 class="subheading">Можно оставить заявку на сайте или написать в любую соц сеть или мессенджер</h4> {% endcomment %}
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Можно оставить заявку на сайте или написать в любую соц сеть или мессенджер</p></div>
+                    <div class="timeline-body"><p class="text-muted">Написать в любую соц сеть или мессенджер</p></div>
                 </div>
             </li>
             <li class="timeline-inverted">
@@ -237,31 +237,8 @@
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Оставить заявку</h2>
-            <h3 class="section-subheading text-muted-custom">Или написать в любую соц сеть или мессенджер.</h3>
+            <h3 class="section-subheading text-muted-custom">Напишите/позвоните через любой вид связи в шапке сайта</h3>
         </div>
-        <div class="row align-items-stretch mb-5">
-            <div class="col-md-8 mx-auto">
-
-                <form method="post" enctype="multipart/form-data" form id="contactForm" action="{% url "index" %}">
-                {% csrf_token %}
-                {% for field in form %}
-                {% if field.label != 'Комментарий' %}
-                <div class="form-group">
-                    {{ field|addclass:'form-control' }}
-                </div>
-                {% endif %}
-                {% if field.label == 'Комментарий' %}
-                <div class="form-group">
-                    {{ field|addclass:'form-control' }}
-                </div>
-                {% endif %}
-                {% endfor %}
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" type="submit">Оставить заявку</button></div>
-            </div>
-            </form>
-        </div>
-    </div>
     </div>
 </section>
 

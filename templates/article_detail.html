@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/articles/">Ликбез</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+    </ol>
+  </nav>
+  <h1>{{ article.title }}</h1>
+  {% if article.summary %}<p class="lead">{{ article.summary }}</p>{% endif %}
+  <div class="content">{{ article.content|safe }}</div>
+</div>
+{% endblock %}
+

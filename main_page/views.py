@@ -1,6 +1,9 @@
-from django.shortcuts import render
+import time
+
+from django.shortcuts import get_object_or_404, render
 
 from main_page.forms import OrderForm
+from main_page.models import Brand, BikeModel, Article, Review
 
 from .telegram import admin_id, bot
 
@@ -34,4 +37,32 @@ def yandex_webmaster(request):
 
 
 def google(request):
+    time.sleep(5)
+    print(time.time())
     return render(request, "google91b4364c93644c83.html")
+
+
+def brands(request):
+    items = Brand.objects.all().prefetch_related("models")
+    return render(request, "brands.html", {"brands": items})
+
+
+def bike_model_detail(request, slug: str):
+    model = get_object_or_404(BikeModel.objects.select_related("brand"), slug=slug)
+    reviews = model.reviews.all()[:12]
+    return render(request, "model_detail.html", {"model": model, "reviews": reviews})
+
+
+def articles(request):
+    items = Article.objects.filter(is_published=True)
+    return render(request, "articles.html", {"articles": items})
+
+
+def article_detail(request, slug: str):
+    item = get_object_or_404(Article, slug=slug, is_published=True)
+    return render(request, "article_detail.html", {"article": item})
+
+
+def reviews(request):
+    items = Review.objects.select_related("bike_model", "bike_model__brand").all()
+    return render(request, "reviews.html", {"reviews": items})
